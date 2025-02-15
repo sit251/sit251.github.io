@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratthani Vocational College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="College Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+              <li><a href="index.html">หน้าหลัก</a></li>
+              <li><a href="01.html">ข้อมูลผู้บริหาร</a></li>
+              <li><a href="02.html">ข้อมูลบุคลากร</a></li>
+              <li><a href="03.html">วิชาที่เปิดสอน</a></li>
+              <li><a href="04.html">นักเรียนนักศึกษา</a></li>            
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personnel Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-100 font-sans text-black">
+    <main class="container mx-auto p-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg p-6">
+          <h2 class="font-bold text-xl border-b pb-2 mb-4">จำนวนบุคคลากร</h2>
+          <div class="chart-container">
+            <canvas id="teacherChart"></canvas>
+          </div>
+        </div>
+
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg p-6">
+          <h2 class="font-bold text-xl border-b pb-2 mb-4">
+            จำนวนบุคลากรทั้งหมดในปีการศึกษา 2567
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="table-custom">
+              <thead>
+                <tr>
+                  <th rowspan="2" data-label="ประเภทบุคลากร">ประเภทบุคลากร</th>
+                  <th colspan="3" data-label="อัตรากำลัง">อัตรากำลัง</th>
+                  <th colspan="4" data-label="วุฒิการศึกษา">วุฒิการศึกษา</th>
+                  <th rowspan="2" data-label="หมายเหตุ">หมายเหตุ</th>
+                </tr>
+                <tr>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="รวม">รวม</th>
+                  <th data-label="ปริญญาเอก">ปริญญาเอก</th>
+                  <th data-label="ปริญญาโท">ปริญญาโท</th>
+                  <th data-label="ปริญญาตรี">ปริญญาตรี</th>
+                  <th data-label="ต่ำกว่าปริญญาตรี">ต่ำกว่าปริญญาตรี</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">ผู้บริหาร</td>
+                  <td data-label="ชาย">4</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="รวม">5</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">5</td>
+                  <td data-label="ปริญญาตรี">-</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">-</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">ข้าราชการครู</td>
+                  <td data-label="ชาย">17</td>
+                  <td data-label="หญิง">51</td>
+                  <td data-label="รวม">68</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">32</td>
+                  <td data-label="ปริญญาตรี">36</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">-</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">บุคลากรทางการศึกษา</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="รวม">1</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">-</td>
+                  <td data-label="ปริญญาตรี">-</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">1</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">พนักงานราชการ</td>
+                  <td data-label="ชาย">4</td>
+                  <td data-label="หญิง">16</td>
+                  <td data-label="รวม">20</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">5</td>
+                  <td data-label="ปริญญาตรี">15</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">-</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">ครูพิเศษสอน</td>
+                  <td data-label="ชาย">15</td>
+                  <td data-label="หญิง">15</td>
+                  <td data-label="รวม">30</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">3</td>
+                  <td data-label="ปริญญาตรี">27</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">-</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">ลูกจ้างประจำ</td>
+                  <td data-label="ชาย">3</td>
+                  <td data-label="หญิง">2</td>
+                  <td data-label="รวม">5</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">-</td>
+                  <td data-label="ปริญญาตรี">-</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">5</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทบุคลากร">ลูกจ้างชั่วคราว</td>
+                  <td data-label="ชาย">6</td>
+                  <td data-label="หญิง">21</td>
+                  <td data-label="รวม">27</td>
+                  <td data-label="ปริญญาเอก">-</td>
+                  <td data-label="ปริญญาโท">-</td>
+                  <td data-label="ปริญญาตรี">8</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">19</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th data-label="ประเภทบุคลากร">รวม</th>
+                  <td data-label="ชาย">49</td>
+                  <td data-label="หญิง">107</td>
+                  <td data-label="รวม">156</td>
+                  <td data-label="ปริญญาเอก">0</td>
+                  <td data-label="ปริญญาโท">45</td>
+                  <td data-label="ปริญญาตรี">86</td>
+                  <td data-label="ต่ำกว่าปริญญาตรี">25</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg p-6">
+          <h2 class="font-bold text-xl border-b pb-2 mb-4">
+            จำนวนบุคลากรจำแนกตามประเภทวิชา 2567
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="table-custom">
+              <thead>
+                <tr>
+                  <th rowspan="1" data-label="ประเภทวิชา">ประเภทวิชา</th>
+                  <th colspan="2" data-label="ครูประจำ">ครูประจำ</th>
+                  <th colspan="2" data-label="พนักงานราชการ">พนักงานราชการ</th>
+                  <th colspan="2" data-label="ครูพิเศษสอน">ครูพิเศษสอน</th>
+                  <th rowspan="1" data-label="รวม">รวม</th>
+                  <th rowspan="1" data-label="หมายเหตุ">หมายเหตุ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="thead">
+                  <th data-label="ประเภทวิชา">คหกรรม</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="รวม">รวม</th>
+                  <th data-label="หมายเหตุ">หมายเหตุ</th>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">ผ้าและเครื่องแต่งกาย</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="รวม">5</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">อาหารและโภชนาการ</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">5</td>
+                  <td data-label="ชาย">2</td>
+                  <td data-label="หญิง">3</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">3</td>
+                  <td data-label="รวม">15</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">คหกรรมทั่วไป</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="ชาย">3</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="รวม">6</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <th data-label="ประเภทวิชา">รวม</th>
+                  <td data-label="ชาย"><b>3</b></td>
+                  <td data-label="หญิง"><b>7</b></td>
+                  <td data-label="ชาย"><b>2</b></td>
+                  <td data-label="หญิง"><b>5</b></td>
+                  <td data-label="ชาย"><b>5</b></td>
+                  <td data-label="หญิง"><b>4</b></td>
+                  <td data-label="รวม"><b>26</b></td>
+                  <td data-label="หมายเหตุ"><b>-</b></td>
+                </tr>
+
+                <tr class="thead">
+                  <th data-label="ประเภทวิชา">พาณิชยกรรม</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="รวม">รวม</th>
+                  <th data-label="หมายเหตุ">หมายเหตุ</th>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">การบัญชี</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">10</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">2</td>
+                  <td data-label="รวม">12</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">การเลขานุการ</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">4</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">2</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="รวม">7</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">การตลาด</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">4</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="รวม">4</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">คอมพิวเตอร์ธุรกิจ</td>
+                  <td data-label="ชาย">5</td>
+                  <td data-label="หญิง">3</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">3</td>
+                  <td data-label="ชาย">2</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="รวม">13</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">โลจิสติกส์และซัพพลายเชน</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">2</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="รวม">3</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <th data-label="ประเภทวิชา">รวม</th>
+                  <td data-label="ชาย"><b>6</b></td>
+                  <td data-label="หญิง"><b>23</b></td>
+                  <td data-label="ชาย"><b>0</b></td>
+                  <td data-label="หญิง"><b>5</b></td>
+                  <td data-label="ชาย"><b>2</b></td>
+                  <td data-label="หญิง"><b>3</b></td>
+                  <td data-label="รวม"><b>39</b></td>
+                  <td data-label="หมายเหตุ"><b>-</b></td>
+                </tr>
+
+                <tr class="thead">
+                  <th data-label="ประเภทวิชา">อุตสาหกรรมท่องเที่ยว</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="รวม">รวม</th>
+                  <th data-label="หมายเหตุ">หมายเหตุ</th>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">การโรงแรม</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">6</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">1</td>
+                  <td data-label="รวม">7</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <td data-label="ประเภทวิชา">การท่องเที่ยว</td>
+                  <td data-label="ชาย">1</td>
+                  <td data-label="หญิง">2</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">-</td>
+                  <td data-label="ชาย">-</td>
+                  <td data-label="หญิง">2</td>
+                  <td data-label="รวม">5</td>
+                  <td data-label="หมายเหตุ">-</td>
+                </tr>
+                <tr>
+                  <th data-label="ประเภทวิชา">รวม</th>
+                  <td data-label="ชาย"><b>1</b></td>
+                  <td data-label="หญิง"><b>8</b></td>
+                  <td data-label="ชาย"><b>0</b></td>
+                  <td data-label="หญิง"><b>0</b></td>
+                  <td data-label="ชาย"><b>0</b></td>
+                  <td data-label="หญิง"><b>3</b></td>
+                  <td data-label="รวม"><b>12</b></td>
+                  <td data-label="หมายเหตุ"><b>-</b></td>
+                </tr>
+
+                <tr class="thead">
+                  <th data-label="ประเภทวิชา">ศิลปกรรม</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="ชาย">ชาย</th>
+                  <th data-label="หญิง">หญิง</th>
+                  <th data-label="รวม">รวม</th>
+                  <th data-label="หมายเหตุ">หมายเหตุ</th>
+                </tr>
+                <tr>
+                    <tr>
+                        <td>ผู้บริหาร</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                      </tr>
+                      
+                      <tr>
+                        <td data-label="ประเภทบุคลากร">ผู้บริหาร</td>
+                        <td data-label="ชาย">4</td>
+                        <td data-label="หญิง">1</td>
+                        <td data-label="รวม">5</td>
+                      </tr>

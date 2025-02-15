@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratthani Vocational College</title>
+    <link rel="stylesheet" href="style.css">  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <style>
+        /*  CSS Reset (Normalize.css is a good alternative) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+           /* Set a base font size and line-height that works well across devices */
+            font-size: 16px; /*  Start with a base size */
+            line-height: 1.5;
+            color: #333; /*  Dark gray for better readability */
+            background-color: #f4f4f4; /* Light gray background */
+
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+            padding: 1rem 0; /*  Consistent padding */
+            position: sticky;  /*  Make the header sticky */
+            top: 0;           /*  Stick to the top */
+            z-index: 100;     /*  Ensure it's above other content */
+            width: 100%;
+        }
+        .logo-img {
+             max-height: 60px;  /* Limit logo height, adjust as needed */
+             width: auto; /* Maintain aspect ratio */
+            display: block; /*  For consistent spacing */
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center; /* Center the navigation items */
+            margin: 0;
+            padding: 0;
+
+        }
+
+        nav li {
+            display: inline-block; /*  Horizontal menu */
+            margin: 0 1rem; /*  Spacing between menu items */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            display: block; /* Make the links fill the list item space, easier to click */
+            padding: 0.5rem 0.75rem; /* Add some padding inside the links */
+            transition: color 0.2s ease;  /* Smooth color transition */
+            border-radius: 4px; /* Optional: rounded corners */
+
+        }
+        nav a:hover, nav a:focus {
+            color: #0056b3; /*  Highlight color on hover/focus */
+            background-color: #f0f0f0;  /* Optional: light background on hover */
+
+        }
+
+        .logo {
+            text-align: center; /* Center the logo */
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            background-color: #e9ecef; /* Light gray background */
+            text-align: center;
+            padding: 3rem 1rem; /* Use rem units for consistent padding */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem; /* Responsive font size for the heading */
+             margin-bottom: 0.5rem; /* Spacing below heading */
+            font-weight: 600;
+             color: #0056b3;  /* Use a brand color, adjust to your needs */
+        }
+
+        .hero p {
+            font-size: 1.125rem;  /*  Slightly larger than body text */
+            margin-bottom: 1rem;    /*  Space between paragraphs */
+            color: #555;        /* Slightly darker gray for better contrast */
+
+        }
+
+        .content-wrapper {
+            padding: 1rem;
+            /* Add more styles here as needed */
+        }
+
+        .temperature {
+            text-align: center; /* Center the temperature */
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+              margin-top: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+
+        }
+
+        .social-icons {
+            margin-top: 0.5rem; /* Space above the icons */
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.25rem; /* Icon size */
+            margin: 0 0.5rem;  /* Spacing between icons */
+            display: inline-block; /* Display icons horizontally */
+            transition: color 0.3s ease;
+        }
+       .social-icons a:hover,
+       .social-icons a:focus{
+            color: #ddd;
+       }
+
+        /* Responsive Design (Media Queries) */
+
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            body {
+                font-size: 17px; /* Slightly larger base font on tablets */
+            }
+             header {
+                display: flex;      /*  Use flexbox for layout */
+                justify-content: space-between; /* Space logo and nav */
+                align-items: center;      /* Vertically center items */
+                padding: 1rem 2rem; /* More padding on larger screens */
+             }
+            .logo{
+                margin-bottom: 0;
+                text-align: left; /* Left-align logo on larger screens */
+            }
+
+            nav ul {
+                text-align: right; /* Right-align nav on larger screens */
+            }
+             .hero {
+                padding: 4rem 2rem; /* More padding on larger screens */
+            }
+            .hero h1{
+                font-size: 3rem;
+            }
+        }
+
+        /* Larger Desktop Styles */
+        @media (min-width: 1024px) {
+             body {
+                font-size: 18px; /* Even larger base font on desktops */
+            }
+
+            .hero h1 {
+              font-size: 3.75rem; /* Even larger heading */
+
+           }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="College Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="01.html">ข้อมูลผู้บริหาร</a></li>
+                <li><a href="02.html">ข้อมูลบุคลากร</a></li>
+                <li><a href="03.html">วิชาที่เปิดสอน</a></li>
+                <li><a href="04.html">นักเรียนนักศึกษา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>วิทยาลัยอาชีวศึกษาสุราษฎร์รานี</h1>
+            <p>Suratthani Vocational College</p>
+            <p>ยินดีต้อนรับสู่วิทยาลัยอาชีวศึกษาสุราษฎร์รานี</p>
+        </div>
+
+        <div class="content-wrapper">
+
+        </div>
+        <div class="temperature">
+           25°C
+        </div>
+    </main>
+
+    <footer>
+      &copy; 2023 Suratthani Vocational College. All rights reserved.
+        <div class="social-icons">
+            <a href="https://www.facebook.com/people/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B9%8C%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%AD%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5/100071754115831/#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </footer>
+    </body>
+</html>

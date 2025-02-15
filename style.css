@@ -1,0 +1,379 @@
+/* --- Resets and Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #f2f7ff;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    background-color: white;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-img {
+    max-height: 70px;
+    width: auto;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4a5568;
+    padding: 10px 18px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid transparent;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+
+/* --- Main Content Area --- */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    position: relative; /* For absolute positioning of elements within */
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 0.4em;
+    font-weight: 600;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* --- REMOVED .surat-text and .welcome-text styles --- */
+
+.search-bar-container {
+     position: relative;  /* Use relative positioning*/
+    width: 100%;
+    max-width: 600px; /* Wider search bar */
+    margin-bottom: 30px; /*Consistent spacing*/
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px 25px; /* More padding */
+    border: none;
+    border-radius: 35px; /* More rounded */
+    font-size: 20px;
+    outline: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    color: #333;
+    font-family: 'Prompt', sans-serif;
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition on focus */
+}
+
+.search-bar:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Even stronger shadow on focus */
+}
+
+.language-select {
+    padding: 10px 18px;
+    border-radius: 20px; /* Match search bar */
+    border: 1px solid #ccc;
+    font-family: 'Prompt', sans-serif;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+   
+}
+.language-select:hover{
+     background-color: #f0f0f0; /* Light gray on hover */
+}
+
+/* --- Content Wrapper (for the border) --- */
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid #ddd;
+}
+
+/* --- Temperature Display --- */
+.temperature {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 1.1em;
+    font-weight: 500;
+     z-index: 3; /* Above the wrapper and content */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #ecf0f1;
+    margin: 0 12px;
+    font-size: 1.8em;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: #3498db;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3.5em;
+    }
+    .hero p {
+        font-size: 1.4em;
+    }
+
+    .content-wrapper { /* Adjust padding on smaller screens */
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+     .logo-img{
+        max-height: 60px;
+    }
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+      nav ul li a{
+         padding: 8px 12px;
+
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+     .content-wrapper{
+        width: 95%; /* Full width */
+     }
+    footer {
+        flex-direction: column;
+    }
+    .temperature{
+      position: static;
+       margin-top: 10px;
+    }
+     .search-bar-container{
+        width: 95%;
+    }
+     .search-bar{
+        font-size: 16px; /*Smaller font*/
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p{
+       font-size: 1em;
+    }
+}
+/* style.css */
+
+/* Custom table styles (optional, but helps with responsiveness) */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse; /* Important for borders */
+    color: black; /* Add this line to set text color to black */
+}
+
+.table-custom th,
+.table-custom td {
+    border: 1px solid #ddd; /* Lighter border color */
+    padding: 0.5rem; /* Reduce padding slightly */
+    text-align: center;
+    font-size: 0.875rem; /* Slightly smaller font */
+}
+
+.table-custom thead th {
+    background-color: #f2f2f2; /* Light gray header background */
+    font-weight: bold;
+}
+
+.table-custom th[rowspan] {
+    vertical-align: middle;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping (subtle) */
+}
+
+.table-custom tfoot {
+    font-weight: bold;
+    background-color: #e0e0e0; /* Slightly darker footer */
+}
+
+.table-custom tfoot th {
+    background-color: #e0e0e0;
+}
+
+/*  For the "thead" class you added */
+.thead th {
+    background-color: #d3dce6; /*  Match your !bg-secondary-200 */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-custom {
+        font-size: 0.75rem; /* Smaller font on smaller screens */
+        display: block; /*  Important: Make table elements block-level */
+        overflow-x: auto;  /*  Horizontal scrolling if needed */
+    }
+
+    /* Hide the thead on very small screens, repeat in first row */
+    .table-custom thead {
+        display: none;
+    }
+
+    .table-custom tbody tr,
+    .table-custom tfoot tr {
+        display: block; /*  Each row is a block */
+        margin-bottom: 1rem;  /*  Space between rows */
+        border: 1px solid #ddd; /* Border around each "row" */
+    }
+
+    .table-custom td,
+    .table-custom th {
+        display: block; /* Each cell is a block */
+        text-align: left;  /* Left-align for readability */
+        border: none;  /*  Remove cell borders */
+        padding: 0.25rem 0.5rem; /* Less padding */
+
+        /*  "Fake" the table header using data-label attributes */
+        &:before {
+            content: attr(data-label);  /*  Get the label from data-label */
+            font-weight: bold;
+            display: inline-block;
+            width: 50%; /*  Adjust as needed for layout */
+            margin-right: 0.5rem;
+            text-align: right; /* Align labels to the right */
+        }
+    }
+
+    .table-custom tfoot th:before {
+        content: attr(data-label);  /*  Get the label from data-label */
+        font-weight: bold;
+        display: inline-block;
+        width: 50%; /*  Adjust as needed for layout */
+        margin-right: 0.5rem;
+        text-align: right; /* Align labels to the right */
+    }
+    .table-custom tfoot td{
+        text-align: center;  /* Important: center the total*/
+    }
+
+    .table-custom tfoot td:before{
+        content: none; /* Remove the pseudo-content*/
+    }
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 40vh; /* Responsive height */
+    width: 80vw;  /* Responsive width */
+    max-width: 800px; /* Limit maximum width */
+}
