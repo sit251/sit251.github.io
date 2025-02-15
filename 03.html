@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratthani Vocational College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="College Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+              <li><a href="index.html">หน้าหลัก</a></li>
+              <li><a href="01.html">ข้อมูลผู้บริหาร</a></li>
+              <li><a href="02.html">ข้อมูลบุคลากร</a></li>
+              <li><a href="03.html">วิชาที่เปิดสอน</a></li>
+              <li><a href="04.html">นักเรียนนักศึกษา</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>หลักสูตร</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif; /* Use a more common font */
+            line-height: 1.6;
+        }
+
+        .main-container {
+          max-width: 1200px; /* Increased max-width for larger screens*/
+          margin-left: auto;
+          margin-right: auto;
+          padding: 1rem; /* Use Tailwind's padding */
+
+        }
+
+        .section-container {
+          margin-bottom: 2rem; /* Use Tailwind's margin */
+          background-color: white;
+          border-radius: 0.5rem; /* Use Tailwind's border-radius */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+          padding: 1.5rem; /* Use Tailwind's padding */
+
+        }
+        .section-container:last-child{
+            margin-bottom: 0;
+        }
+
+        .main-heading {
+            font-size: 1.5rem; /* Use Tailwind's text sizes */
+            font-weight: bold;
+            border-bottom: 2px solid #4a5568; /* Darker border */
+            padding-bottom: 0.75rem; /* Use Tailwind's padding */
+            margin-bottom: 1.25rem; /* Use Tailwind's margin */
+        }
+
+       .section-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Responsive columns */
+          gap: 1.5rem;  /*  Tailwind spacing */
+        }
+        .sub-section{
+            margin-bottom: 2rem;
+        }
+
+
+        .type-heading {
+            background-color: #68d391; /* Use a Tailwind color */
+            color: #2d3748; /* Darker text for contrast */
+            padding: 0.75rem; /* Use Tailwind's padding */
+            border-radius: 0.375rem; /* Use Tailwind's border-radius */
+            font-weight: 600;
+            font-size: 1.125rem;
+             margin-bottom: 1rem; /*  Tailwind spacing */
+        }
+
+        .major-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .major-item {
+            margin-bottom: 1rem;
+             padding-left: 1.25rem;  /*  Indent for visual hierarchy */
+            position: relative; /*  For the bullet point positioning */
+
+        }
+          /*  Custom bullet point */
+        .major-item:before {
+            content: '•'; /* Bullet point */
+            color: #4a5568; /* Dark gray */
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+
+        .major-title {
+            font-weight: 600; /* Semibold */
+            color: #2d3748;
+        }
+
+        .sub-major-list {
+            list-style: disc;  /* Use standard disc bullets */
+            padding-left: 2.5rem; /* Increased indent for sub-list */
+             margin-top: 0.5rem; /*  Tailwind spacing */
+        }
+
+        .sub-major-item {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+       /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 0.75rem; /* Reduce padding on smaller screens */
+            }
+            .section-grid {
+                grid-template-columns: 1fr; /* Stack sections on small screens */
+            }
+             .major-item {
+               padding-left: 1rem;
+            }
+              .sub-major-list{
+                 padding-left: 1.75rem;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <main class="main-container">
+
+        <div class="section-container">
+            <h2 class="main-heading">หลักสูตรประกาศนียบัตรวิชาชีพ (ปวช.) พุทธศักราช 2564 หลักสูตร 3 ปี</h2>
+            <div class="section-grid">
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาพาณิชยกรรม</h3>
+                    <ul class="major-list">
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการบัญชี</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานการบัญชี</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการตลาด</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานการตลาด</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการเลขานุการ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานการเลขานุการ</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาคอมพิวเตอร์ธุรกิจ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานคอมพิวเตอร์ธุรกิจ</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาศิลปกรรม</h3>
+                    <ul class="major-list">
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาวิจิตรศิลป์</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานวิจิตรศิลป์</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการออกแบบ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานการออกแบบ</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาคอมพิวเตอร์กราฟิก</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานคอมพิวเตอร์กราฟิก</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+               <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาคหกรรม</h3>
+                    <ul class="major-list">
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาธุรกิจคหกรรม</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานธุรกิจคหกรรม</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาแฟชั่นและสิ่งทอ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานแฟชั่นดีไซน์</li>
+                                <li>สาขางานธุรกิจอาหาร</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาอาหารและโภชนาการ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานอาหารและโภชนาการ</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section class="sub-section">
+                   <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมท่องเที่ยว</h3>
+                     <ul class="major-list">
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการโรงแรม</h4>
+                            <ul class="sub-major-list">
+                               <li>สาขางานการโรงแรม</li>
+                                <li>สาขางานการโรงแรม (ทวิภาคี)</li>
+                            </ul>
+                        </li>
+                       <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการท่องเที่ยว</h4>
+                           <ul class="sub-major-list">
+                               <li>สาขางานการท่องเที่ยว</li>
+                           </ul>
+                       </li>
+                    </ul>
+               </section>
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมอาหาร</h3>
+                    <ul class="major-list">
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาอาหารและโภชนาการ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานอาหารและโภชนาการ</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+               <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาศิลปกรรมและเศรษฐกิจสร้างสรรค์</h3>
+                    <ul class="major-list">
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาวิจิตรศิลป์</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานวิจิตรศิลป์</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการออกแบบ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานการออกแบบ</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาดิจิทัลกราฟิก</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานดิจิทัลกราฟิก</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมแฟชั่นและสิ่งทอ</h3>
+                    <ul class="major-list">
+                         <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาแฟชั่นและสิ่งทอ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานแฟชั่นและสิ่งทอ</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                 <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมดิจิทัลและเทคโนโลยีสารสนเทศ</h3>
+                    <ul class="major-list">
+                         <li class="major-item">
+                             <h4 class="major-title">สาขาวิชาเทคโนโลยีสารสนเทศ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานเทคโนโลยีสารสนเทศ</li>
+                            </ul>
+                        </li>
+                       <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล</h4>
+                           <ul class="sub-major-list">
+                                <li>สาขางานเทคโนโลยีธุรกิจดิจิทัล</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                   <h3 class="type-heading">ประเภทวิชาเทคโนโลยีสารสนเทศและการสื่อสาร</h3>
+                   <ul class="major-list">
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาเทคโนโลยีสารสนเทศ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานการโปรแกรมคอมพิวเตอร์เว็บและอุปกรณ์เคลื่อนที่</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+        <div class="section-container">
+            <h2 class="main-heading">หลักสูตรประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.) พุทธศักราช 2567 หลักสูตร 2 ปี รับจากผู้สำเร็จการศึกษาระดับ ปวช.</h2>
+           <div class="section-grid">
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาบริหารธุรกิจ</h3>
+                      <ul class="major-list">
+                       <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการบัญชี</h4>
+                           <ul class="sub-major-list">
+                               <li>สาขางานการบัญชี</li>
+                           </ul>
+                       </li>
+                       <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการตลาด</h4>
+                           <ul class="sub-major-list">
+                               <li>สาขางานการตลาด</li>
+                           </ul>
+                       </li>
+                       <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการจัดการธุรกิจ</h4>
+                           <ul class="sub-major-list">
+                               <li>สาขางานการจัดการธุรกิจ</li>
+                           </ul>
+                        </li>
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล</h4>
+                          <ul class="sub-major-list">
+                               <li>สาขางานธุรกิจดิจิทัล</li>
+                           </ul>
+                       </li>
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการจัดการ</h4>
+                            <ul class="sub-major-list">
+                               <li>สาขางานการจัดการ</li>
+                           </ul>
+                        </li>
+                       <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการจัดการโลจิสติกส์และซัพพลายเชน</h4>
+                            <ul class="sub-major-list">
+                               <li>สาขางานการจัดการคลังสินค้า (ทวิภาคี)</li>
+                           </ul>
+                       </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาคหกรรม</h3>
+                   <ul class="major-list">
+                       <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาธุรกิจคหกรรม</h4>
+                           <ul class="sub-major-list">
+                               <li>สาขางานธุรกิจคหกรรม</li>
+                           </ul>
+                        </li>
+                        <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาอาหารและโภชนาการ</h4>
+                            <ul class="sub-major-list">
+                                <li>สาขางานอาหารและโภชนาการ</li>
+                                <li>สาขางานอาหารและโภชนาการ (ทวิภาคี)</li>
+                            </ul>
+                        </li>
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาเชฟอาหารไทย</h4>
+                           <ul class="sub-major-list">
+                                <li>สาขางานเชฟอาหารไทย (ทวิภาคี)</li>
+                           </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมท่องเที่ยว</h3>
+                   <ul class="major-list">
+                       <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการโรงแรม</h4>
+                            <ul class="sub-major-list">
+                               <li>สาขางานการโรงแรม</li>
+                               <li>สาขางานบริการอาหารและเครื่องดื่ม</li>
+                            </ul>
+                        </li>
+                         <li class="major-item">
+                            <h4 class="major-title">สาขาวิชาการท่องเที่ยว</h4>
+                           <ul class="sub-major-list">
+                                <li>สาขางานการท่องเที่ยว</li>
+                            </ul>
+                        </li>
+                   </ul>
+                </section>
+
+                <section class="sub-section">
+                    <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมโลจิสติกส์</h3>
+                   <ul class="major-list">
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาการจัดการโลจิสติกส์และซัพพลายเชน</h4>
+                            <ul class="sub-major-list">
+                               <li>สาขางานการจัดการโลจิสติกส์และซัพพลายเชน</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sub-section">
+                   <h3 class="type-heading">ประเภทวิชาอุตสาหกรรมอาหาร</h3>
+                   <ul class="major-list">
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาอาหารและโภชนาการ</h4>
+                            <ul class="sub-major-list">
+                               <li>สาขางานอาหารและโภชนาการ</li>
+                           </ul>
+                       </li>
+                        <li class="major-item">
+                           <h4 class="major-title">สาขาวิชาเช

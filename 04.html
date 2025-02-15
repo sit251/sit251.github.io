@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratthani Vocational College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="College Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+              <li><a href="index.html">หน้าหลัก</a></li>
+              <li><a href="01.html">ข้อมูลผู้บริหาร</a></li>
+              <li><a href="02.html">ข้อมูลบุคลากร</a></li>
+              <li><a href="03.html">วิชาที่เปิดสอน</a></li>
+              <li><a href="04.html">นักเรียนนักศึกษา</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student and Teacher Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* --- General Styles --- */
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f4f7f6; /* Light background */
+            color: #333;
+            margin: 0; /* Remove default margin */
+            padding: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Space between grid items */
+            max-width: 1200px; /* Limit maximum width */
+            margin: 0 auto; /* Center the grid */
+        }
+
+        .bg-white {
+            background-color: white;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
+            overflow: hidden; /* For rounded corners on content */
+        }
+
+        header {
+            border-bottom: 2px solid #e2e8f0; /* Light border */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem; /* Larger heading */
+            font-weight: 600; /* Semi-bold */
+            color: #2d3748; /* Darker text color */
+        }
+
+        /* --- Table Styles --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Lighter border */
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f4f8; /* Light gray background for headers */
+            font-weight: 500; /* Semi-bold */
+        }
+
+        tr.thead th {
+            background-color: #4a90e2; /* Blue background for category headers */
+            color: white;
+        }
+        tr:nth-child(even) {
+          background-color: #f9f9f9; /* Light alternating row color */
+        }
+
+        /* --- Chart Styles --- */
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh; /* Responsive height */
+            width: 80vw;  /* Responsive width */
+            max-width: 800px; /* But don't get too wide */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid {
+              grid-template-columns: 1fr; /* Stack grid items on small screens*/
+            }
+              .chart-container { /* Full width chart */
+                width: 95vw;
+                height: 50vh;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="grid">  </div>
+            <div class="bg-white">
+                <header>
+                    <h2 class="font-bold text-xl">
+                        จำนวนนักเรียน นักศึกษา ระดับ ปวช. ปวส.1
+                    </h2>
+                </header>
+                <article class="py-2 chart-container">
+                    <canvas id="teacherChart"></canvas>
+                </article>
+
+                <script>
+                    const ctx = document.getElementById("teacherChart");
+                    const years = Array.from(
+                        {
+                            length: 2567 - 2558 + 1,
+                        },
+                        (_, i) => 2558 + i
+                    );
+
+                    new Chart(ctx, {
+                        type: "line",  //  'line' chart
+                        data: {
+                            labels: years,
+                            datasets: [
+                                {
+                                    label: "ประกาศนียบัตรวิชาชีพ (ปวช.)",
+                                    data: [
+                                        2145, 2239, 2268, 2516, 2538, 2416, 2481, 2283, 2154,
+                                        2160,
+                                    ],
+                                    borderColor: 'rgb(75, 192, 192)', // Line color
+                                    tension: 0.4, // Smooth the line
+                                    fill: false, // Don't fill area under the line
+                                },
+                                {
+                                    label: "ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)",
+                                    data: [775, 686, 711, 816, 887, 907, 984, 1003, 905, 833],
+                                    borderColor: 'rgb(255, 99, 132)', // Different line color
+                                    tension: 0.4,
+                                     fill: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true, // Make the chart responsive
+                            maintainAspectRatio: false, // Allow chart to fill container
+                            plugins: { // Add title and customize
+                              title: {
+                                display: true,
+                                text: 'จำนวนนักเรียน/นักศึกษา ปวช. และ ปวส. 1', // Chart title
+                                font: {
+                                  size: 16
+                                }
+                              },
+                              legend: { // Customize the legend
+                                position: 'top', // Put legend at the top
+                              },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: false, // Start y-axis at zero.  Good practice!
+                                    title: {       // Add Y axis label
+                                      display: true,
+                                      text: 'จำนวนนักเรียน/นักศึกษา'
+                                     }
+                                },
+                                x: {                // Add X axis label
+                                  title: {
+                                    display: true,
+                                    text: 'ปีการศึกษา'
+                                  }
+                                }
+                            },
+                        },
+                    });
+                </script>
+            </div>
+            <div class="bg-white">
+                <header>
+                    <h2 class="font-bold text-xl">
+                        จำนวนนักเรียน ระดับประกาศนียบัตรวิชาชีพ(ปวช.)
+                    </h2>
+                </header>
+                <article class="py-2">
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <p>ประเภทวิชา/สาขาวิชา</p>
+                                </th>
+                                <th colspan="2">
+                                    <p>ปวช. 1</p>
+                                </th>
+                                <th colspan="2">
+                                    <p>ปวช. 2</p>
+                                </th>
+                                <th colspan="2">
+                                    <p>ปวช. 3</p>
+                                </th>
+                                <th rowspan="2">
+                                    <p>รวม</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="thead">
+                                <th class="!bg-secondary-200"><p>พาณิชยกรรม</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>รวม</p></th>
+                            </tr>
+                            <tr>
+                                <td><p>การบัญชี</p></td>
+                                <td><p>12</p></td>
+                                <td><p>135</p></td>
+                                <td><p>8</p></td>
+                                <td><p>112</p></td>
+                                <td><p>9</p></td>
+                                <td><p>114</p></td>
+                                <td><p>390</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>การตลาด</p></td>
+                                <td><p>9</p></td>
+                                <td><p>77</p></td>
+                                <td><p>7</p></td>
+                                <td><p>47</p></td>
+                                <td><p>6</p></td>
+                                <td><p>37</p></td>
+                                <td><p>183</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>การเลขานุการ</p></td>
+                                <td><p>3</p></td>
+                                <td><p>21</p></td>
+                                <td><p>1</p></td>
+                                <td><p>25</p></td>
+                                <td><p>3</p></td>
+                                <td><p>31</p></td>
+                                <td><p>84</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>คอมพิวเตอร์ธุรกิจ</p></td>
+                                <td><p>0</p></td>
+                                <td><p>0</p></td>
+                                <td><p>34</p></td>
+                                <td><p>60</p></td>
+                                <td><p>36</p></td>
+                                <td><p>54</p></td>
+                                <td><p>184</p></td>
+                            </tr>
+                            <tr>
+                                <td><b>รวม</b></td>
+                                <td><b>24</b></td>
+                                <td><b>233</b></td>
+                                <td><b>50</b></td>
+                                <td><b>244</b></td>
+                                <td><b>54</b></td>
+                                <td><b>236</b></td>
+                                <td><b>841</b></td>
+                            </tr>
+                            <tr class="thead">
+                                <th class="!bg-secondary-200"><p>ศิลปกรรม</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>รวม</p></th>
+                            </tr>
+                            <tr>
+                                <td><p>วิจิตรศิลป์</p></td>
+                                <td><p>0</p></td>
+                                <td><p>0</p></td>
+                                <td><p>12</p></td>
+                                <td><p>9</p></td>
+                                <td><p>3</p></td>
+                                <td><p>5</p></td>
+                                <td><p>29</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>ออกแบบ</p></td>
+                                <td><p>0</p></td>
+                                <td><p>0</p></td>
+                                <td><p>8</p></td>
+                                <td><p>15</p></td>
+                                <td><p>7</p></td>
+                                <td><p>4</p></td>
+                                <td><p>34</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>คอมพิวเตอร์กราฟิก</p></td>
+                                <td><p>0</p></td>
+                                <td><p>0</p></td>
+                                <td><p>40</p></td>
+                                <td><p>32</p></td>
+                                <td><p>37</p></td>
+                                <td><p>33</p></td>
+                                <td><p>142</p></td>
+                            </tr>
+                            <tr>
+                                <td><b>รวม</b></td>
+                                <td><b>0</b></td>
+                                <td><b>0</b></td>
+                                <td><b>60</b></td>
+                                <td><b>56</b></td>
+                                <td><b>47</b></td>
+                                <td><b>42</b></td>
+                                <td><b>205</b></td>
+                            </tr>
+                            <tr class="thead">
+                                <th class="!bg-secondary-200"><p>คหกรรม</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>รวม</p></th>
+                            </tr>
+                            <tr>
+                                <td><p>ธุรกิจคหกรรม</p></td>
+                                <td><p>8</p></td>
+                                <td><p>9</p></td>
+                                <td><p>3</p></td>
+                                <td><p>6</p></td>
+                                <td><p>6</p></td>
+                                <td><p>4</p></td>
+                                <td><p>36</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>แฟชั่นดีไซน์</p></td>
+                                <td><p>0</p></td>
+                                <td><p>0</p></td>
+                                <td><p>1</p></td>
+                                <td><p>83</p></td>
+                                <td><p>3</p></td>
+                                <td><p>82</p></td>
+                                <td><p>169</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>อาหารและโภชนาการ</p></td>
+                                <td><p>0</p></td>
+                                <td><p>0</p></td>
+                                <td><p>43</p></td>
+                                <td><p>10</p></td>
+                                <td><p>23</p></td>
+                                <td><p>8</p></td>
+                                <td><p>84</p></td>
+                            </tr>
+                            <tr>
+                                <td><b>รวม</b></td>
+                                <td><b>8</b></td>
+                                <td><b>9</b></td>
+                                <td><b>47</b></td>
+                                <td><b>99</b></td>
+                                <td><b>32</b></td>
+                                <td><b>94</b></td>
+                                <td><b>289</b></td>
+                            </tr>
+                            <tr class="thead">
+                                <th class="!bg-secondary-200"><p>อุตสาหกรรมท่องเที่ยว</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>ชาย</p></th>
+                                <th><p>หญิง</p></th>
+                                <th><p>รวม</p></th>
+                            </tr>
+                            <tr>
+                                <td><p>การโรงแรม</p></td>
+                                <td><p>15</p></td>
+                                <td><p>72</p></td>
+                                <td><p>5</p></td>
+                                <td><p>50</p></td>
+                                <td><p>5</p></td>
+                                <td><p>47</p></td>
+                                <td><p>194</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>การโรงแรม (ทวิภาคี)</p></td>
+                                <td><p>11</p></td>
+                                <td><p>25</p></td>
+                                <td><p>4</p></td>
+                                <td><p>11</p></td>
+                                <td><p>0</p></td>
+                                <td><p>12</p></td>
+                                <td><p>63</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>การท่องเที่ยว</p></td>
+                                <td><p>5</p></td>
+                                <td><p>29</p></td>
+                                <td><p>5</p></td>
+                                <td><p>26</p></td>
+                                <td><p>6</p></td>
+                                <td><p>24</p></td>
+                                <td><p>95</p></td>
+                            </tr>
+                            <tr>
+                                <td><b>รวม</b></td>
+                                <td><b>31</b></td>
+                                <td><b>126</b></td>
+                                <td><b>14</b></td>
+                                <td><b>87</b></td>
+                                <td><b>11</b></td>
+                                <td><b>83</b></td>
+</body>
+</html>
